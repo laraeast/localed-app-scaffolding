@@ -1,0 +1,23 @@
+
+// Fonts
+/* arabic */
+@font-face {
+    font-family: 'Cairo';
+    src: url("../fonts/Cairo-Regular.ttf");
+}
+/* hebrew */
+@font-face {
+    font-family: 'Heebo';
+    src: url("../fonts/Heebo-Regular.ttf");
+}
+
+body, .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Heebo', 'Cairo', sans-serif;
+}
+table.table-middle {
+    tr {
+        td {
+            vertical-align: middle;
+        }
+    }
+}
