@@ -11,16 +11,20 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-         $this->call(UsersTableSeeder::class);
-         $this->call(CategoriesTableSeeder::class);
-         $this->call(SettingsTableSeeder::class);
+        $this->command->call('passport:install', ['--quiet' => true]);
 
-         $this->command->table(['name', 'email', 'password'], [
-             [
-                 'name' => 'Admin',
-                 'email' => 'admin@demo.com',
-                 'password' => 'password',
-             ]
-         ]);
+        $this->command->call('medialibrary:clean');
+
+        $this->call(UsersTableSeeder::class);
+        $this->call(CategoriesTableSeeder::class);
+        $this->call(SettingsTableSeeder::class);
+
+        $this->command->table(['name', 'email', 'password'], [
+            [
+                'name' => 'Admin',
+                'email' => 'admin@demo.com',
+                'password' => 'password',
+            ],
+        ]);
     }
 }
