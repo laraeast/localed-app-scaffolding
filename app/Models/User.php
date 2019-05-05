@@ -4,11 +4,11 @@ namespace App\Models;
 
 use Laravel\Passport\HasApiTokens;
 use App\Models\Helpers\UserHelpers;
-use App\Models\Concerns\HasMediaTrait;
 use Illuminate\Notifications\Notifiable;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use App\Models\Presenters\DashboardPresenter;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Elnooronline\LaravelConcerns\Models\Helpers\HasMediaTrait;
 use Elnooronline\LaravelConcerns\Models\Abstracts\Authenticatable;
 use Elnooronline\LaravelConcerns\Models\Concerns\SingleTableInheritance;
 
