@@ -16,9 +16,9 @@ return [
         'save' => 'Save',
     ],
     'messages' => [
-        'created' => 'The user has been created successfuly.',
-        'updated' => 'The user has been updated successfuly.',
-        'deleted' => 'The user has been deleted successfuly.',
+        'created' => 'The user has been created successfully.',
+        'updated' => 'The user has been updated successfully.',
+        'deleted' => 'The user has been deleted successfully.',
     ],
     'attributes' => [
         'name' => 'Name',

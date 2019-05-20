@@ -17,9 +17,9 @@ return [
         'save' => 'Save',
     ],
     'messages' => [
-        'created' => 'The category has been created successfuly.',
-        'updated' => 'The category has been updated successfuly.',
-        'deleted' => 'The category has been deleted successfuly.',
+        'created' => 'The category has been created successfully.',
+        'updated' => 'The category has been updated successfully.',
+        'deleted' => 'The category has been deleted successfully.',
     ],
     'attributes' => [
         'name' => 'Name',

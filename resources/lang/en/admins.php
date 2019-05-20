@@ -16,9 +16,9 @@ return [
         'save' => 'Save',
     ],
     'messages' => [
-        'created' => 'The admin has been created successfuly.',
-        'updated' => 'The admin has been updated successfuly.',
-        'deleted' => 'The admin has been deleted successfuly.',
+        'created' => 'The admin has been created successfully.',
+        'updated' => 'The admin has been updated successfully.',
+        'deleted' => 'The admin has been deleted successfully.',
     ],
     'attributes' => [
         'name' => 'Name',
