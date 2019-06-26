@@ -1,4 +1,4 @@
-@extends('layouts.dashboard')
+@extends('layouts.dashboard', ['title' => trans('admins.plural')])
 @section('content')
     @component('adminlte::page', ['title' => $admin->name, 'breadcrumb' => [
         'dashboard.admins.show', $admin

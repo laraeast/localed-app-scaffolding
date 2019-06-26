@@ -1,4 +1,4 @@
-@extends('layouts.dashboard')
+@extends('layouts.dashboard', ['title' => trans('categories.plural')])
 @section('content')
     @component('adminlte::page', ['title' => $category->name, 'breadcrumb' => [
         'dashboard.categories.show', $category
