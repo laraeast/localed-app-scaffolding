@@ -17,7 +17,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $this->authorize('index', Category::class);
+        $this->authorize('viewAny', Category::class);
 
         return View::make('dashboard.categories.index')
             ->withCategories(

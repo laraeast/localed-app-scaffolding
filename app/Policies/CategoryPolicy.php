@@ -11,12 +11,12 @@ class CategoryPolicy
     use HandlesAuthorization;
 
     /**
-     * Determine whether the user can list the categories.
+     * Determine whether the user can view any the categories.
      *
      * @param  \App\Models\User $user
      * @return mixed
      */
-    public function index(User $user)
+    public function viewAny(User $user)
     {
         return $user->isAdmin();
     }

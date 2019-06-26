@@ -16,7 +16,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $this->authorize('index', Admin::class);
+        $this->authorize('viewAny', Admin::class);
 
         return View::make('dashboard.admins.index')
             ->withAdmins(

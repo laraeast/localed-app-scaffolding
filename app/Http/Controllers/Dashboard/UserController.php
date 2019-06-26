@@ -16,7 +16,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $this->authorize('index', User::class);
+        $this->authorize('viewAny', User::class);
 
         return View::make('dashboard.users.index')
             ->withUsers(

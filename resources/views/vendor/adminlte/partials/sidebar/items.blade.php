@@ -5,7 +5,7 @@
             <span>@lang('dashboard.home')</span>
         </a>
     </li>
-    @can('index', \App\Models\Admin::class)
+    @can('viewAny', \App\Models\Admin::class)
         <li class="{{ css_resource_active('dashboard.admins') }}">
             <a href="{{ route('dashboard.admins.index') }}">
                 <i class="fa fa-user-secret"></i>
@@ -13,7 +13,7 @@
             </a>
         </li>
     @endcan
-    @can('index', \App\Models\User::class)
+    @can('viewAny', \App\Models\User::class)
         <li class="{{ css_resource_active('dashboard.users') }}">
             <a href="{{ route('dashboard.users.index') }}">
                 <i class="fa fa-users"></i>
@@ -21,7 +21,7 @@
             </a>
         </li>
     @endcan
-    @can('index', \App\Models\Category::class)
+    @can('viewAny', \App\Models\Category::class)
         <li class="{{ css_resource_active('dashboard.categories') }}">
             <a href="{{ route('dashboard.categories.index') }}">
                 <i class="fa fa-list"></i>

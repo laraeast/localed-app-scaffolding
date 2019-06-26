@@ -10,12 +10,12 @@ class UserPolicy
     use HandlesAuthorization;
 
     /**
-     * Determine whether the user can list the categories.
+     * Determine whether the user can view any the users.
      *
      * @param  \App\Models\User $user
      * @return mixed
      */
-    public function index(User $user)
+    public function viewAny(User $user)
     {
         return $user->isAdmin();
     }
@@ -33,7 +33,7 @@ class UserPolicy
     }
 
     /**
-     * Determine whether the user can create categories.
+     * Determine whether the user can create users.
      *
      * @param  \App\Models\User $user
      * @return mixed
