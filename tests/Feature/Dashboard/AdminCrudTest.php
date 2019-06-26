@@ -2,8 +2,8 @@
 
 namespace Tests\Feature\Dashboard;
 
-use App\Models\User;
 use Tests\TestCase;
+use App\Models\User;
 use App\Models\Admin;
 use Tests\Support\HasValidation;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -143,9 +143,9 @@ class AdminCrudTest extends TestCase
                 'method' => 'POST',
             ],
         ])->each(function ($route) {
-                $this->assertRequiredValidation('name', $route['url'], $route['method']);
-                $this->assertMaxValidation('name', $route['url'], $route['method'], 255);
-                $this->assertRequiredValidation('email', $route['url'], $route['method']);
+            $this->assertRequiredValidation('name', $route['url'], $route['method']);
+            $this->assertMaxValidation('name', $route['url'], $route['method'], 255);
+            $this->assertRequiredValidation('email', $route['url'], $route['method']);
         });
     }
 }

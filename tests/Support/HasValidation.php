@@ -2,9 +2,9 @@
 
 namespace Tests\Support;
 
-use Elnooronline\LaravelLocales\Facades\Locales;
-use Illuminate\Support\Facades\App;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\App;
+use Elnooronline\LaravelLocales\Facades\Locales;
 
 trait HasValidation
 {
@@ -104,7 +104,7 @@ trait HasValidation
      */
     public function assertMaxValidation($field, $url, $method, $max)
     {
-        $this->json($method, $url, [$field => Str::random(((int)$max) + 1)])
+        $this->json($method, $url, [$field => Str::random(((int) $max) + 1)])
             ->assertJsonValidationErrors([$field]);
 
         return $this;
@@ -179,10 +179,10 @@ trait HasValidation
      */
     public function assertBetweenValidation($field, $url, $method, $from, $to)
     {
-        $this->json($method, $url, [$field => ((int)$from - 1)])
+        $this->json($method, $url, [$field => ((int) $from - 1)])
             ->assertJsonValidationErrors([$field]);
 
-        $this->json($method, $url, [$field => ((int)$to + 1)])
+        $this->json($method, $url, [$field => ((int) $to + 1)])
             ->assertJsonValidationErrors([$field]);
 
         $this->json($method, $url, [$field => rand($from, $to)])

@@ -31,6 +31,5 @@ class HomeController extends Controller
         $editor->addOrUpdateMediaFromRequest('file');
 
         return $editor->getFirstMediaUrl();
-
     }
 }

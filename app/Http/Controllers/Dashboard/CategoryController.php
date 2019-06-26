@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\View;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\View;
 use App\Http\Requests\CategoryRequest;
 
 class CategoryController extends Controller

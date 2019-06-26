@@ -72,7 +72,6 @@ class RouteServiceProvider extends ServiceProvider
              ->namespace($this->namespace)
              ->group(function () {
                  Auth::routes(['register' => false]);
-
              });
 
         Route::middleware(['web', 'auth', 'dashboard.language', 'dashboard.access'])

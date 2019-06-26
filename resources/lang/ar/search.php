@@ -1,4 +1,5 @@
 <?php
+
 return [
     'placeholder' => 'ابحث عن ..',
     'result' => 'نتائج البحث',

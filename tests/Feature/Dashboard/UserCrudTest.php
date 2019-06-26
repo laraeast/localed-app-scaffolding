@@ -142,9 +142,9 @@ class UserCrudTest extends TestCase
                 'method' => 'POST',
             ],
         ])->each(function ($route) {
-                $this->assertRequiredValidation('name', $route['url'], $route['method']);
-                $this->assertMaxValidation('name', $route['url'], $route['method'], 255);
-                $this->assertRequiredValidation('email', $route['url'], $route['method']);
+            $this->assertRequiredValidation('name', $route['url'], $route['method']);
+            $this->assertMaxValidation('name', $route['url'], $route['method'], 255);
+            $this->assertRequiredValidation('email', $route['url'], $route['method']);
         });
     }
 }

@@ -1,4 +1,5 @@
 <?php
+
 return [
     'important-links' => 'Important Links',
     'about-company' => 'About Company',

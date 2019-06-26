@@ -1,4 +1,5 @@
 <?php
+
 return [
     'important-links' => 'روابط هامة',
     'about-company' => 'نبذة عن الشركة',

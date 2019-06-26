@@ -1,4 +1,5 @@
 <?php
+
 Route::get('/', 'HomeController')->name('home');
 
 Route::post('media/upload', 'HomeController@upload')->name('media.upload');
