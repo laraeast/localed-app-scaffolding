@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use Dimsav\Translatable\Translatable;
+use Astrotomic\Translatable\Translatable;
 use App\Models\Presenters\DashboardPresenter;
 use App\Models\Relationship\CategoryRelation;
 use Elnooronline\LaravelConcerns\Models\Abstracts\Model;
