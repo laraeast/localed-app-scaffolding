@@ -11,3 +11,5 @@ Route::resource('admins', 'AdminController');
 Route::resource('users', 'UserController');
 
 Route::resource('categories', 'CategoryController');
+
+Route::resource('feedback', 'FeedbackController')->only('index', 'show', 'destroy');

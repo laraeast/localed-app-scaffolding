@@ -29,4 +29,12 @@
             </a>
         </li>
     @endcan
+    @can('viewAny', \App\Models\Feedback::class)
+        <li class="{{ css_resource_active('dashboard.feedback') }}">
+            <a href="{{ route('dashboard.feedback.index') }}">
+                <i class="fa fa-envelope-o"></i>
+                <span>@lang('feedback.plural')</span>
+            </a>
+        </li>
+    @endcan
 </ul>

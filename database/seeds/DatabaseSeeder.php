@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call(UsersTableSeeder::class);
         $this->call(CategoriesTableSeeder::class);
+        $this->call(FeedbackTableSeeder::class);
         $this->call(SettingsTableSeeder::class);
 
         $this->command->table(['name', 'email', 'password'], [

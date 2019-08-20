@@ -16,3 +16,7 @@ Route::get('/', function () {
 });
 
 Auth::routes(['register' => false]);
+
+Route::get('feedback', 'FeedbackController@index')->name('feedback');
+
+Route::post('feedback', 'FeedbackController@store')->name('feedback');

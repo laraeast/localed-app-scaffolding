@@ -127,6 +127,28 @@ trait HasValidation
     }
 
     /**
+     * Assert that the response has a email validation.
+     *
+     * @param string $field
+     * @param string $url
+     * @param string $method
+     * @return $this
+     */
+    public function assertEmailValidation($field, $url, $method)
+    {
+        $this->json($method, $url, [$field => 123])
+            ->assertJsonValidationErrors([$field]);
+
+        $this->json($method, $url, [$field => 'invalid email'])
+            ->assertJsonValidationErrors([$field]);
+
+        $this->json($method, $url, [$field => 'email@example.com'])
+            ->assertJsonMissingValidationErrors([$field]);
+
+        return $this;
+    }
+
+    /**
      * Assert that the response has a numeric validation.
      *
      * @param string $field
