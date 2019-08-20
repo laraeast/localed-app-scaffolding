@@ -31,7 +31,8 @@ class SendFeedbackMessageListener
     {
         Admin::chunk(10, function ($admins) use ($event) {
             Notification::send(
-                $admins, new SendFeedbackMessageNotification($event->feedback)
+                $admins,
+                new SendFeedbackMessageNotification($event->feedback)
             );
         });
     }

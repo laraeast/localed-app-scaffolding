@@ -2,14 +2,14 @@
 
 namespace Tests\Feature\Web;
 
-use App\Models\Admin;
-use App\Models\User;
-use App\Notifications\SendFeedbackMessageNotification;
-use Illuminate\Support\Facades\Notification;
 use Tests\TestCase;
+use App\Models\User;
+use App\Models\Admin;
 use App\Models\Feedback;
 use Tests\Support\HasValidation;
+use Illuminate\Support\Facades\Notification;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use App\Notifications\SendFeedbackMessageNotification;
 
 class FeedbackTest extends TestCase
 {
@@ -28,7 +28,9 @@ class FeedbackTest extends TestCase
 
         $this->assertEquals(0, Feedback::count());
 
-        $response = $this->post(route('feedback'), [
+        $response = $this->post(
+            route('feedback'),
+            [
                 'name' => 'Ahmed Fathy',
                 'email' => 'ahmed@example.com',
                 'phone' => '123456789',

@@ -13,7 +13,7 @@ class Feedback extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'phone', 'message'
+        'name', 'email', 'phone', 'message',
     ];
 
     /**
@@ -42,6 +42,6 @@ class Feedback extends Model
      */
     public function isReaded()
     {
-        return !! $this->getAttribute('readed_at');
+        return ! ! $this->getAttribute('readed_at');
     }
 }
