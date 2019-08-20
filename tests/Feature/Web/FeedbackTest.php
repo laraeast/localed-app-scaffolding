@@ -2,6 +2,10 @@
 
 namespace Tests\Feature\Web;
 
+use App\Models\Admin;
+use App\Models\User;
+use App\Notifications\SendFeedbackMessageNotification;
+use Illuminate\Support\Facades\Notification;
 use Tests\TestCase;
 use App\Models\Feedback;
 use Tests\Support\HasValidation;
@@ -14,7 +18,13 @@ class FeedbackTest extends TestCase
     /** @test */
     public function anyone_can_send_feedback_message()
     {
-        $this->be($this->createAdmin());
+        Notification::fake();
+
+        $admins = factory(Admin::class, 3)->create();
+
+        $users = factory(User::class, 3)->create();
+
+        Notification::assertNothingSent();
 
         $this->assertEquals(0, Feedback::count());
 
@@ -27,6 +37,10 @@ class FeedbackTest extends TestCase
         );
 
         $response->assertRedirect();
+
+        Notification::assertSentTo($admins, SendFeedbackMessageNotification::class);
+
+        Notification::assertNotSentTo($users, SendFeedbackMessageNotification::class);
 
         $this->assertEquals(1, Feedback::count());
 

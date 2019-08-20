@@ -2,12 +2,12 @@
 
 namespace App\Listeners;
 
+use App\Models\Admin;
 use App\Events\FeedbackSent;
-use App\Notifications\SendFeedbackMessageNotification;
-use App\Models\User;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Facades\Notification;
+use App\Notifications\SendFeedbackMessageNotification;
 
 class SendFeedbackMessageListener
 {
@@ -29,9 +29,10 @@ class SendFeedbackMessageListener
      */
     public function handle(FeedbackSent $event)
     {
-        Notification::send(
-            User::whereType('admin')->get(),
-            new SendFeedbackMessageNotification($event->feedback)
-        );
+        Admin::chunk(10, function ($admins) use ($event) {
+            Notification::send(
+                $admins, new SendFeedbackMessageNotification($event->feedback)
+            );
+        });
     }
 }
