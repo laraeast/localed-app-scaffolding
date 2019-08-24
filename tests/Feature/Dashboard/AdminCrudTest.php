@@ -36,6 +36,8 @@ class AdminCrudTest extends TestCase
         $response->assertSuccessful();
 
         $response->assertSee(e($admin->name));
+
+        $response->assertViewIs('dashboard.admins.index');
     }
 
     /** @test */
@@ -50,6 +52,20 @@ class AdminCrudTest extends TestCase
         $response->assertSuccessful();
 
         $response->assertSee(e($admin->name));
+
+        $response->assertViewIs('dashboard.admins.show');
+    }
+
+    /** @test */
+    public function it_can_display_create_admin_form()
+    {
+        $this->be($this->createAdmin());
+
+        $response = $this->get(route('dashboard.admins.create'));
+
+        $response->assertSuccessful();
+
+        $response->assertViewIs('dashboard.admins.create');
     }
 
     /** @test */
@@ -80,6 +96,20 @@ class AdminCrudTest extends TestCase
             'email' => 'name@example.com',
             'type' => User::ADMIN_TYPE,
         ]);
+    }
+
+    /** @test */
+    public function it_can_display_edit_admin_form()
+    {
+        $this->be($this->createAdmin());
+
+        $admin = factory(Admin::class)->create();
+
+        $response = $this->get(route('dashboard.admins.edit', $admin));
+
+        $response->assertSuccessful();
+
+        $response->assertViewIs('dashboard.admins.edit');
     }
 
     /** @test */

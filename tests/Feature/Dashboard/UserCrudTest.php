@@ -35,6 +35,8 @@ class UserCrudTest extends TestCase
         $response->assertSuccessful();
 
         $response->assertSee(e($user->name));
+
+        $response->assertViewIs('dashboard.users.index');
     }
 
     /** @test */
@@ -49,6 +51,20 @@ class UserCrudTest extends TestCase
         $response->assertSuccessful();
 
         $response->assertSee(e($user->name));
+
+        $response->assertViewIs('dashboard.users.show');
+    }
+
+    /** @test */
+    public function it_can_display_user_create_form()
+    {
+        $this->be($this->createAdmin());
+
+        $response = $this->get(route('dashboard.users.create'));
+
+        $response->assertSuccessful();
+
+        $response->assertViewIs('dashboard.users.create');
     }
 
     /** @test */
@@ -79,6 +95,22 @@ class UserCrudTest extends TestCase
             'email' => 'name@example.com',
             'type' => User::USER_TYPE,
         ]);
+    }
+
+    /** @test */
+    public function it_can_display_user_edit_form()
+    {
+        $this->be($this->createAdmin());
+
+        $user = factory(User::class)->create();
+
+        $response = $this->get(route('dashboard.users.edit', $user));
+
+        $response->assertSuccessful();
+
+        $response->assertSee(e($user->name));
+
+        $response->assertViewIs('dashboard.users.edit');
     }
 
     /** @test */

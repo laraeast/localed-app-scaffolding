@@ -34,6 +34,8 @@ class FeedbackTest extends TestCase
         $response->assertSuccessful();
 
         $response->assertSee(e($feedback->name));
+
+        $response->assertViewIs('dashboard.feedback.index');
     }
 
     /** @test */
@@ -52,6 +54,8 @@ class FeedbackTest extends TestCase
         $this->assertTrue($feedback->refresh()->isReaded());
 
         $response->assertSee(e($feedback->name));
+
+        $response->assertViewIs('dashboard.feedback.show');
     }
 
     /** @test */

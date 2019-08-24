@@ -35,6 +35,8 @@ class CategoryCrudTest extends TestCase
         $response->assertSuccessful();
 
         $response->assertSee(e($category->name));
+
+        $response->assertViewIs('dashboard.categories.index');
     }
 
     /** @test */
@@ -49,6 +51,20 @@ class CategoryCrudTest extends TestCase
         $response->assertSuccessful();
 
         $response->assertSee(e($category->name));
+
+        $response->assertViewIs('dashboard.categories.show');
+    }
+
+    /** @test */
+    public function it_can_display_category_create_form()
+    {
+        $this->be($this->createAdmin());
+
+        $response = $this->get(route('dashboard.categories.create'));
+
+        $response->assertSuccessful();
+
+        $response->assertViewIs('dashboard.categories.create');
     }
 
     /** @test */
@@ -71,6 +87,20 @@ class CategoryCrudTest extends TestCase
             'name' => 'dummy category',
             'locale' => 'en',
         ]);
+    }
+
+    /** @test */
+    public function it_can_display_category_edit_form()
+    {
+        $this->be($this->createAdmin());
+
+        $category = factory(Category::class)->create();
+
+        $response = $this->get(route('dashboard.categories.edit', $category));
+
+        $response->assertSuccessful();
+
+        $response->assertViewIs('dashboard.categories.edit');
     }
 
     /** @test */
