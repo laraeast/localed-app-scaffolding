@@ -3,8 +3,8 @@
 namespace App\Http\Requests;
 
 use App\Models\Category;
-use Illuminate\Support\Facades\Gate;
 use Elnooronline\LaravelConcerns\Http\Requests\FormRequest;
+use Illuminate\Support\Facades\Gate;
 
 class CategoryRequest extends FormRequest
 {
@@ -33,7 +33,7 @@ class CategoryRequest extends FormRequest
     {
         return $this->parseLocaled([
             'name:{default}' => 'required|max:255',
-            'name:{lang}' => 'nullable|max:255',
+            'name:{lang}'    => 'nullable|max:255',
         ]);
     }
 }

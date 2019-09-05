@@ -2,9 +2,9 @@
 
 namespace Tests\Feature\Dashboard;
 
-use Tests\TestCase;
 use App\Models\Feedback;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\TestCase;
 
 class FeedbackTest extends TestCase
 {

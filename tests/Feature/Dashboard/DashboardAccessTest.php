@@ -2,8 +2,8 @@
 
 namespace Tests\Feature\Dashboard;
 
-use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\TestCase;
 
 class DashboardAccessTest extends TestCase
 {

@@ -42,6 +42,6 @@ class Feedback extends Model
      */
     public function isReaded()
     {
-        return ! ! $this->getAttribute('readed_at');
+        return (bool) $this->getAttribute('readed_at');
     }
 }

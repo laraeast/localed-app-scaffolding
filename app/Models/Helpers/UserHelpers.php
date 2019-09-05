@@ -28,6 +28,7 @@ trait UserHelpers
 
     /**
      * Get the user avatar image.
+     *
      * @return string
      */
     public function getAvatar()

@@ -2,7 +2,7 @@
 
 return [
     'menus' => [
-        'home' => 'Home',
+        'home'     => 'Home',
         'feedback' => 'Contact Us',
     ],
 ];
