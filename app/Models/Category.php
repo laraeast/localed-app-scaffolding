@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
-use Astrotomic\Translatable\Translatable;
 use App\Models\Presenters\DashboardPresenter;
 use App\Models\Relationship\CategoryRelation;
+use Astrotomic\Translatable\Translatable;
 use Elnooronline\LaravelConcerns\Models\Abstracts\Model;
 
 class Category extends Model

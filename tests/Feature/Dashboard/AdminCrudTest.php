@@ -2,11 +2,11 @@
 
 namespace Tests\Feature\Dashboard;
 
-use Tests\TestCase;
-use App\Models\User;
 use App\Models\Admin;
-use Tests\Support\HasValidation;
+use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\Support\HasValidation;
+use Tests\TestCase;
 
 class AdminCrudTest extends TestCase
 {
@@ -78,11 +78,11 @@ class AdminCrudTest extends TestCase
         $response = $this->post(
             route('dashboard.admins.store'),
             [
-                'name' => 'dummy admin',
-                'email' => 'name@example.com',
-                'password' => 'password',
+                'name'                  => 'dummy admin',
+                'email'                 => 'name@example.com',
+                'password'              => 'password',
                 'password_confirmation' => 'password',
-                'avatar' => $this->dummyBase64Image(),
+                'avatar'                => $this->dummyBase64Image(),
             ]
         );
 
@@ -92,9 +92,9 @@ class AdminCrudTest extends TestCase
         $this->assertEquals(1, Admin::all()->last()->getMedia()->count());
 
         $this->assertDatabaseHas('users', [
-            'name' => 'dummy admin',
+            'name'  => 'dummy admin',
             'email' => 'name@example.com',
-            'type' => User::ADMIN_TYPE,
+            'type'  => User::ADMIN_TYPE,
         ]);
     }
 
@@ -124,11 +124,11 @@ class AdminCrudTest extends TestCase
         $response = $this->put(
             route('dashboard.admins.update', $admin),
             [
-                'name' => 'dummy admin',
-                'email' => 'name@example.com',
-                'password' => 'password',
+                'name'                  => 'dummy admin',
+                'email'                 => 'name@example.com',
+                'password'              => 'password',
                 'password_confirmation' => 'password',
-                'avatar' => $this->dummyBase64Image(),
+                'avatar'                => $this->dummyBase64Image(),
             ]
         );
 
@@ -138,9 +138,9 @@ class AdminCrudTest extends TestCase
         $this->assertEquals(1, Admin::all()->last()->getMedia()->count());
 
         $this->assertDatabaseHas('users', [
-            'name' => 'dummy admin',
+            'name'  => 'dummy admin',
             'email' => 'name@example.com',
-            'type' => User::ADMIN_TYPE,
+            'type'  => User::ADMIN_TYPE,
         ]);
     }
 
@@ -166,10 +166,9 @@ class AdminCrudTest extends TestCase
     {
         $this->be($this->createAdmin());
 
-
         collect([
             [
-                'url' => route('dashboard.admins.store'),
+                'url'    => route('dashboard.admins.store'),
                 'method' => 'POST',
             ],
         ])->each(function ($route) {

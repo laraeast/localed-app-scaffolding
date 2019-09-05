@@ -2,9 +2,9 @@
 
 namespace Tests\Support;
 
-use Illuminate\Support\Str;
-use Illuminate\Support\Facades\App;
 use Elnooronline\LaravelLocales\Facades\Locales;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Str;
 
 trait HasValidation
 {
@@ -14,6 +14,7 @@ trait HasValidation
      * @param string $field
      * @param string $url
      * @param string $method
+     *
      * @return $this
      */
     public function assertRequiredValidation($field, $url, $method = 'POST')
@@ -30,6 +31,7 @@ trait HasValidation
      * @param string $field
      * @param string $url
      * @param string $method
+     *
      * @return $this
      */
     public function assertNullableValidation($field, $url, $method = 'POST')
@@ -46,6 +48,7 @@ trait HasValidation
      * @param string $field
      * @param string $url
      * @param string $method
+     *
      * @return $this
      */
     public function assertBolleanValidation($field, $url, $method = 'POST')
@@ -78,6 +81,7 @@ trait HasValidation
      * @param string $url
      * @param string $method
      * @param $model
+     *
      * @return $this
      */
     public function assertExistsValidation($field, $url, $method, $model)
@@ -99,7 +103,8 @@ trait HasValidation
      * @param string $field
      * @param string $url
      * @param string $method
-     * @param int $max
+     * @param int    $max
+     *
      * @return $this
      */
     public function assertMaxValidation($field, $url, $method, $max)
@@ -116,6 +121,7 @@ trait HasValidation
      * @param string $field
      * @param string $url
      * @param string $method
+     *
      * @return $this
      */
     public function assertStringValidation($field, $url, $method)
@@ -132,6 +138,7 @@ trait HasValidation
      * @param string $field
      * @param string $url
      * @param string $method
+     *
      * @return $this
      */
     public function assertEmailValidation($field, $url, $method)
@@ -154,6 +161,7 @@ trait HasValidation
      * @param string $field
      * @param string $url
      * @param string $method
+     *
      * @return $this
      */
     public function assertNumericValidation($field, $url, $method)
@@ -173,6 +181,7 @@ trait HasValidation
      * @param string $field
      * @param string $url
      * @param string $method
+     *
      * @return $this
      */
     public function assertIntegerValidation($field, $url, $method)
@@ -195,8 +204,9 @@ trait HasValidation
      * @param string $field
      * @param string $url
      * @param string $method
-     * @param int $from
-     * @param int $to
+     * @param int    $from
+     * @param int    $to
+     *
      * @return $this
      */
     public function assertBetweenValidation($field, $url, $method, $from, $to)
@@ -219,6 +229,7 @@ trait HasValidation
      * @param string $field
      * @param string $url
      * @param string $method
+     *
      * @return $this
      */
     public function assertBase64ImageValidation($field, $url, $method)
@@ -238,6 +249,7 @@ trait HasValidation
      * @param string $field
      * @param string $url
      * @param string $method
+     *
      * @return $this
      */
     public function assertBase64ImagesValidation($field, $url, $method)

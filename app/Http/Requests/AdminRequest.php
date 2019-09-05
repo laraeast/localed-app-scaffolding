@@ -2,10 +2,10 @@
 
 namespace App\Http\Requests;
 
-use App\Models\Admin;
-use Illuminate\Support\Facades\Gate;
 use App\Http\Requests\Traits\WithHashedPassword;
+use App\Models\Admin;
 use Elnooronline\LaravelConcerns\Http\Requests\FormRequest;
+use Illuminate\Support\Facades\Gate;
 
 class AdminRequest extends FormRequest
 {
@@ -45,8 +45,8 @@ class AdminRequest extends FormRequest
     public function createRules()
     {
         return [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'name'     => ['required', 'string', 'max:255'],
+            'email'    => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ];
     }
@@ -59,8 +59,8 @@ class AdminRequest extends FormRequest
     public function updateRules()
     {
         return [
-            'name' => ['sometimes', 'required', 'string', 'max:255'],
-            'email' => ['sometimes', 'required', 'string', 'email', 'max:255', 'unique:users,id,'. $this->route('admin')->id],
+            'name'     => ['sometimes', 'required', 'string', 'max:255'],
+            'email'    => ['sometimes', 'required', 'string', 'email', 'max:255', 'unique:users,id,'.$this->route('admin')->id],
             'password' => ['sometimes', 'nullable', 'string', 'min:8', 'confirmed'],
         ];
     }

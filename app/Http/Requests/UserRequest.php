@@ -2,10 +2,10 @@
 
 namespace App\Http\Requests;
 
-use App\Models\User;
-use Illuminate\Support\Facades\Gate;
 use App\Http\Requests\Traits\WithHashedPassword;
+use App\Models\User;
 use Elnooronline\LaravelConcerns\Http\Requests\FormRequest;
+use Illuminate\Support\Facades\Gate;
 
 class UserRequest extends FormRequest
 {
@@ -45,8 +45,8 @@ class UserRequest extends FormRequest
     public function createRules()
     {
         return [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'name'     => ['required', 'string', 'max:255'],
+            'email'    => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ];
     }
@@ -59,8 +59,8 @@ class UserRequest extends FormRequest
     public function updateRules()
     {
         return [
-            'name' => ['sometimes', 'required', 'string', 'max:255'],
-            'email' => ['sometimes', 'required', 'string', 'email', 'max:255', 'unique:users,id,'. $this->route('user')->id],
+            'name'     => ['sometimes', 'required', 'string', 'max:255'],
+            'email'    => ['sometimes', 'required', 'string', 'email', 'max:255', 'unique:users,id,'.$this->route('user')->id],
             'password' => ['sometimes', 'nullable', 'string', 'min:8', 'confirmed'],
         ];
     }

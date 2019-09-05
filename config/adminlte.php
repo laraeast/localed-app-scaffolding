@@ -45,12 +45,12 @@ return [
         | The options that can be nullable is register and password_request meaning that it can be disabled.
         |
         */
-        'base' => '/',
-        'logout' => 'logout',
-        'login' => 'login',
-        'register' => null,
+        'base'             => '/',
+        'logout'           => 'logout',
+        'login'            => 'login',
+        'register'         => null,
         'password_request' => 'password/reset',
-        'password_email' => 'password/email',
-        'password_reset' => 'password/reset',
+        'password_email'   => 'password/email',
+        'password_reset'   => 'password/reset',
     ],
 ];
