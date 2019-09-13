@@ -3,8 +3,8 @@
 namespace App\Models;
 
 use App\Models\Presenters\DashboardPresenter;
-use Elnooronline\LaravelConcerns\Models\Concerns\SingleTableInheritance;
 use Elnooronline\LaravelConcerns\Models\Scopes\UserTypeScope;
+use Elnooronline\LaravelConcerns\Models\Concerns\SingleTableInheritance;
 
 class Admin extends User
 {

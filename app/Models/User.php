@@ -2,14 +2,14 @@
 
 namespace App\Models;
 
+use Laravel\Passport\HasApiTokens;
 use App\Models\Helpers\UserHelpers;
+use Illuminate\Notifications\Notifiable;
+use Spatie\MediaLibrary\HasMedia\HasMedia;
 use App\Models\Presenters\DashboardPresenter;
+use Elnooronline\LaravelConcerns\Models\Helpers\HasMediaTrait;
 use Elnooronline\LaravelConcerns\Models\Abstracts\Authenticatable;
 use Elnooronline\LaravelConcerns\Models\Concerns\SingleTableInheritance;
-use Elnooronline\LaravelConcerns\Models\Helpers\HasMediaTrait;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Passport\HasApiTokens;
-use Spatie\MediaLibrary\HasMedia\HasMedia;
 
 class User extends Authenticatable implements HasMedia
 {

@@ -2,10 +2,10 @@
 
 namespace Tests\Feature\Dashboard;
 
-use App\Models\Category;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Tests\Support\HasValidation;
 use Tests\TestCase;
+use App\Models\Category;
+use Tests\Support\HasValidation;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class CategoryCrudTest extends TestCase
 {
@@ -84,7 +84,7 @@ class CategoryCrudTest extends TestCase
         $this->assertEquals(1, Category::count());
 
         $this->assertDatabaseHas('category_translations', [
-            'name'   => 'dummy category',
+            'name' => 'dummy category',
             'locale' => 'en',
         ]);
     }
@@ -122,7 +122,7 @@ class CategoryCrudTest extends TestCase
         $this->assertEquals(1, Category::count());
 
         $this->assertDatabaseHas('category_translations', [
-            'name'   => 'dummy category',
+            'name' => 'dummy category',
             'locale' => 'en',
         ]);
     }
@@ -153,11 +153,11 @@ class CategoryCrudTest extends TestCase
 
         collect([
             [
-                'url'    => route('dashboard.categories.store'),
+                'url' => route('dashboard.categories.store'),
                 'method' => 'POST',
             ],
             [
-                'url'    => route('dashboard.categories.update', $category),
+                'url' => route('dashboard.categories.update', $category),
                 'method' => 'PATCH',
             ],
         ])->each(function ($route) {

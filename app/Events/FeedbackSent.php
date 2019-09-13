@@ -3,10 +3,10 @@
 namespace App\Events;
 
 use App\Models\Feedback;
-use Illuminate\Broadcasting\InteractsWithSockets;
+use Illuminate\Queue\SerializesModels;
 use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Foundation\Events\Dispatchable;
-use Illuminate\Queue\SerializesModels;
+use Illuminate\Broadcasting\InteractsWithSockets;
 
 class FeedbackSent
 {
@@ -20,7 +20,7 @@ class FeedbackSent
     /**
      * Create a new event instance.
      *
-     * @param \App\Models\Feedback $feedback
+     * @param  \App\Models\Feedback  $feedback
      */
     public function __construct(Feedback $feedback)
     {

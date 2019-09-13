@@ -2,10 +2,10 @@
 
 namespace App\Listeners;
 
-use App\Events\FeedbackSent;
 use App\Models\Admin;
-use App\Notifications\SendFeedbackMessageNotification;
+use App\Events\FeedbackSent;
 use Illuminate\Support\Facades\Notification;
+use App\Notifications\SendFeedbackMessageNotification;
 
 class SendFeedbackMessageListener
 {
@@ -22,8 +22,7 @@ class SendFeedbackMessageListener
     /**
      * Handle the event.
      *
-     * @param \App\Events\FeedbackSent $event
-     *
+     * @param  \App\Events\FeedbackSent  $event
      * @return void
      */
     public function handle(FeedbackSent $event)

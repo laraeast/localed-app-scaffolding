@@ -7,15 +7,16 @@
 @push('scripts')
     <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.js"></script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             $('.editor').summernote({
                 height: 300,
                 callbacks: {
-                    onImageUpload: function(files, editor, welEditable) {
+                    onImageUpload: function (files, editor, welEditable) {
                         sendFile(files[0], this);
                     }
                 }
             });
+
             function sendFile(file, editor) {
                 data = new FormData();
                 data.append("file", file);

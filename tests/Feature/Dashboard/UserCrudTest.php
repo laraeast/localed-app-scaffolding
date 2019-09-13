@@ -2,10 +2,10 @@
 
 namespace Tests\Feature\Dashboard;
 
-use App\Models\User;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Tests\Support\HasValidation;
 use Tests\TestCase;
+use App\Models\User;
+use Tests\Support\HasValidation;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class UserCrudTest extends TestCase
 {
@@ -77,11 +77,11 @@ class UserCrudTest extends TestCase
         $response = $this->post(
             route('dashboard.users.store'),
             [
-                'name'                  => 'dummy user',
-                'email'                 => 'name@example.com',
-                'password'              => 'password',
+                'name' => 'dummy user',
+                'email' => 'name@example.com',
+                'password' => 'password',
                 'password_confirmation' => 'password',
-                'avatar'                => $this->dummyBase64Image(),
+                'avatar' => $this->dummyBase64Image(),
             ]
         );
 
@@ -91,9 +91,9 @@ class UserCrudTest extends TestCase
         $this->assertEquals(1, User::all()->last()->getMedia()->count());
 
         $this->assertDatabaseHas('users', [
-            'name'  => 'dummy user',
+            'name' => 'dummy user',
             'email' => 'name@example.com',
-            'type'  => User::USER_TYPE,
+            'type' => User::USER_TYPE,
         ]);
     }
 
@@ -125,11 +125,11 @@ class UserCrudTest extends TestCase
         $response = $this->put(
             route('dashboard.users.update', $user),
             [
-                'name'                  => 'dummy user',
-                'email'                 => 'name@example.com',
-                'password'              => 'password',
+                'name' => 'dummy user',
+                'email' => 'name@example.com',
+                'password' => 'password',
                 'password_confirmation' => 'password',
-                'avatar'                => $this->dummyBase64Image(),
+                'avatar' => $this->dummyBase64Image(),
             ]
         );
 
@@ -139,9 +139,9 @@ class UserCrudTest extends TestCase
         $this->assertEquals(1, User::all()->last()->getMedia()->count());
 
         $this->assertDatabaseHas('users', [
-            'name'  => 'dummy user',
+            'name' => 'dummy user',
             'email' => 'name@example.com',
-            'type'  => User::USER_TYPE,
+            'type' => User::USER_TYPE,
         ]);
     }
 
@@ -169,7 +169,7 @@ class UserCrudTest extends TestCase
 
         collect([
             [
-                'url'    => route('dashboard.users.store'),
+                'url' => route('dashboard.users.store'),
                 'method' => 'POST',
             ],
         ])->each(function ($route) {

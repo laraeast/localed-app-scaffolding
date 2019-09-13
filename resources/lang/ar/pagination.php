@@ -11,6 +11,6 @@ return [
     | you want to customize your views to better match your application.
     |
     */
-    'previous' => 'السابق',
-    'next'     => 'التالي',
+    'previous' => '&laquo; السابق',
+    'next' => 'التالي &raquo;',
 ];

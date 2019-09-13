@@ -22,8 +22,8 @@ class DatabaseSeeder extends Seeder
 
         $this->command->table(['name', 'email', 'password'], [
             [
-                'name'     => 'Admin',
-                'email'    => 'admin@demo.com',
+                'name' => 'Admin',
+                'email' => 'admin@demo.com',
                 'password' => 'password',
             ],
         ]);

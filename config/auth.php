@@ -14,7 +14,7 @@ return [
     */
 
     'defaults' => [
-        'guard'     => 'web',
+        'guard' => 'web',
         'passwords' => 'users',
     ],
 
@@ -37,14 +37,14 @@ return [
 
     'guards' => [
         'web' => [
-            'driver'   => 'session',
+            'driver' => 'session',
             'provider' => 'users',
         ],
 
         'api' => [
-            'driver'   => 'passport',
+            'driver' => 'passport',
             'provider' => 'users',
-            'hash'     => false,
+            'hash' => false,
         ],
     ],
 
@@ -67,11 +67,11 @@ return [
 
     'providers' => [
         'users' => [
-            'driver'  => 'eloquent.multiple',
-            'model'   => App\Models\User::class,
+            'driver' => 'eloquent.multiple',
+            'model' => App\Models\User::class,
             'mapping' => [
                 App\Models\User::ADMIN_TYPE => App\Models\Admin::class,
-                App\Models\User::USER_TYPE  => App\Models\User::class,
+                App\Models\User::USER_TYPE => App\Models\User::class,
             ],
         ],
 
@@ -99,8 +99,8 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
-            'table'    => 'password_resets',
-            'expire'   => 60,
+            'table' => 'password_resets',
+            'expire' => 60,
         ],
     ],
 

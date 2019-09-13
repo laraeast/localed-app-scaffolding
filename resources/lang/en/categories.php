@@ -2,19 +2,19 @@
 
 return [
     'singular' => 'Category',
-    'plural'   => 'Categories',
-    'empty'    => 'There are no categories yet.',
-    'count'    => 'Categories count',
-    'search'   => 'Search',
-    'select'   => 'Select Category',
-    'actions'  => [
-        'list'    => 'List all',
-        'create'  => 'Create Category',
-        'show'    => 'Show Category',
-        'edit'    => 'Edit Category',
-        'delete'  => 'Delete Category',
+    'plural' => 'Categories',
+    'empty' => 'There are no categories yet.',
+    'count' => 'Categories count',
+    'search' => 'Search',
+    'select' => 'Select Category',
+    'actions' => [
+        'list' => 'List all',
+        'create' => 'Create Category',
+        'show' => 'Show Category',
+        'edit' => 'Edit Category',
+        'delete' => 'Delete Category',
         'options' => 'Options',
-        'save'    => 'Save',
+        'save' => 'Save',
     ],
     'messages' => [
         'created' => 'The category has been created successfully.',
@@ -26,10 +26,10 @@ return [
     ],
     'dialogs' => [
         'delete' => [
-            'title'   => 'Warning !',
-            'info'    => 'Are you sure you want to delete the category ?',
+            'title' => 'Warning !',
+            'info' => 'Are you sure you want to delete the category ?',
             'confirm' => 'Delete',
-            'cancel'  => 'Cancel',
+            'cancel' => 'Cancel',
         ],
     ],
 ];

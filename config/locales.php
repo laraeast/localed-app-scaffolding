@@ -12,13 +12,13 @@ return [
     'en' => [
         'code' => 'en',
         'name' => 'English',
-        'dir'  => 'ltr',
+        'dir' => 'ltr',
         'flag' => '/images/flags/us.png',
     ],
     'ar' => [
         'code' => 'ar',
         'name' => 'العربية',
-        'dir'  => 'rtl',
+        'dir' => 'rtl',
         'flag' => '/images/flags/sa.png',
     ],
 ];

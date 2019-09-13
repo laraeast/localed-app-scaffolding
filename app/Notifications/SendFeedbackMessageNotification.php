@@ -4,8 +4,8 @@ namespace App\Notifications;
 
 use App\Models\Feedback;
 use Illuminate\Bus\Queueable;
-use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
+use Illuminate\Notifications\Messages\MailMessage;
 
 class SendFeedbackMessageNotification extends Notification
 {
@@ -19,7 +19,7 @@ class SendFeedbackMessageNotification extends Notification
     /**
      * Create a new notification instance.
      *
-     * @param \App\Models\Feedback $feedback
+     * @param  \App\Models\Feedback  $feedback
      */
     public function __construct(Feedback $feedback)
     {
@@ -30,8 +30,7 @@ class SendFeedbackMessageNotification extends Notification
     /**
      * Get the notification's delivery channels.
      *
-     * @param mixed $notifiable
-     *
+     * @param  mixed  $notifiable
      * @return array
      */
     public function via($notifiable)
@@ -42,26 +41,24 @@ class SendFeedbackMessageNotification extends Notification
     /**
      * Get the mail representation of the notification.
      *
-     * @param mixed $notifiable
-     *
+     * @param  mixed  $notifiable
      * @return \Illuminate\Notifications\Messages\MailMessage
      */
     public function toMail($notifiable)
     {
         return (new MailMessage())
-                    ->line(trans('feedback.email.title'))
-                    ->line(trans('feedback.attributes.name').': '.$this->feedback->name)
-                    ->line(trans('feedback.attributes.email').': '.$this->feedback->email)
-                    ->line(trans('feedback.attributes.message').': '.$this->feedback->message)
-                    ->action(trans('feedback.email.more'), route('dashboard.feedback.show', $this->feedback))
-                    ->line(trans('feedback.email.footer'));
+            ->line(trans('feedback.email.title'))
+            ->line(trans('feedback.attributes.name').': '.$this->feedback->name)
+            ->line(trans('feedback.attributes.email').': '.$this->feedback->email)
+            ->line(trans('feedback.attributes.message').': '.$this->feedback->message)
+            ->action(trans('feedback.email.more'), route('dashboard.feedback.show', $this->feedback))
+            ->line(trans('feedback.email.footer'));
     }
 
     /**
      * Get the array representation of the notification.
      *
-     * @param mixed $notifiable
-     *
+     * @param  mixed  $notifiable
      * @return array
      */
     public function toArray($notifiable)

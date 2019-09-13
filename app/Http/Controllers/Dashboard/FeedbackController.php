@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Http\Controllers\Controller;
 use App\Models\Feedback;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\View;
 
 class FeedbackController extends Controller
@@ -26,8 +26,7 @@ class FeedbackController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param \App\Models\Feedback $feedback
-     *
+     * @param  \App\Models\Feedback  $feedback
      * @return \Illuminate\Http\Response
      */
     public function show(Feedback $feedback)
@@ -43,8 +42,7 @@ class FeedbackController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param \App\Models\Feedback $feedback
-     *
+     * @param  \App\Models\Feedback  $feedback
      * @return \Illuminate\Http\Response
      */
     public function destroy(Feedback $feedback)
